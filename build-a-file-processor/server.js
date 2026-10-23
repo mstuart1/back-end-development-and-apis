@@ -2,6 +2,7 @@
 const fs = require("fs")
 const fsPromises = require('fs/promises')
 const crypto = require("crypto")
+const os = require('os')
 
 // console.log(fs)
 //## readFileSync (synchronously)
@@ -59,5 +60,15 @@ const crypto = require("crypto")
 // const random = crypto.randomBytes(16).toString('hex')
 // console.log(random)
 
-const id = crypto.randomUUID();
-console.log(id)
+// const id = crypto.randomUUID();
+// console.log(id)
+
+// console.log(os.platform())
+// console.log(os.arch())
+// console.log(os.hostname())
+
+// console.log(os.totalmem())
+// console.log(os.freemem())
+// console.log(os.uptime())
+
+console.log(os.cpus().length)
