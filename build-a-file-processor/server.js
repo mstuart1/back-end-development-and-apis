@@ -88,5 +88,16 @@ const filePath = path.join(__dirname, "assets", "poem.txt")
 // console.log(path.join('assets', "..", 'server.js')) // returns only the filename???
 // console.log(path.resolve('assets', "..", 'server.js')) // returns the location of the file???
 
-const parts = path.parse(filePath);
-console.log(parts);
+// const parts = path.parse(filePath);
+// console.log(parts);
+
+// console.log(process.version)
+// console.log(process.platform)
+// console.log(process.env.NODE_ENV)
+
+// run with: node server.js hello world
+// console.log(process.argv); // [ '/path/to/node', '/path/to/server.js', 'hello', 'world' ]
+// console.log(process.argv[2]); // 'hello'
+
+process.stdout.write("Hello from stdout\n");
+process.stderr.write("Hello from stderr\n");
