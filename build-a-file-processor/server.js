@@ -3,6 +3,8 @@ const fs = require("fs")
 const fsPromises = require('fs/promises')
 const crypto = require("crypto")
 const os = require('os')
+const path = require('path')
+
 
 // console.log(fs)
 //## readFileSync (synchronously)
@@ -71,4 +73,20 @@ const os = require('os')
 // console.log(os.freemem())
 // console.log(os.uptime())
 
-console.log(os.cpus().length)
+// console.log(os.cpus().length)
+
+const filePath = path.join(__dirname, "assets", "poem.txt")
+// console.log(filePath)
+// console.log(path.basename(filePath)) //- the file name
+// console.log(path.dirname(filePath)) //- the containing dir
+// console.log(path.extname(filePath)) // - the extention including dot
+
+//** path.resolve and path.join both build paths, but they behave differently when given '..' segments:
+// path.join simply concatenates the segments with the separator - it does not resolve the result to an absolute path on its own unless you start with an absolute segment like __dirname.
+// path.resolve always returns an absolute path, processing '..' segments against the current working directory. */
+
+// console.log(path.join('assets', "..", 'server.js')) // returns only the filename???
+// console.log(path.resolve('assets', "..", 'server.js')) // returns the location of the file???
+
+const parts = path.parse(filePath);
+console.log(parts);
