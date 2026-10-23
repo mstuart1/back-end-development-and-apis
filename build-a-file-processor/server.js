@@ -1,6 +1,7 @@
 // Starter file — add your code here
 const fs = require("fs")
 const fsPromises = require('fs/promises')
+const crypto = require("crypto")
 
 // console.log(fs)
 //## readFileSync (synchronously)
@@ -26,4 +27,37 @@ const fsPromises = require('fs/promises')
 // fs.writeFileSync('assets/output.txt', "Hello, freeCodeCamp!")
 
 // ** append file *
-fs.appendFileSync('assets/output.txt', "\nIzzy says hi!")
+// fs.appendFileSync('assets/output.txt', "\nIzzy says hi!")
+
+//** check if a file or dir exists returns boolean */
+// const exists = fs.existsSync("assets/output.txt")
+// console.log(exists)
+
+//** fs.readdirSync reads the contents of a directory and returns an array of file and folder names: */
+// const entries = fs.readdirSync('assets');
+// console.log(entries)
+
+// const buf = Buffer.from('Hello, Node!');
+// console.log(buf)
+// console.log(buf.toString('hex'))
+// console.log(buf.toString('base64'))
+
+//** create a buffer of 8 bytes and fill with ff  */
+// const buf = Buffer.alloc(8, 0xff);
+// console.log(buf)
+
+// decode this buffer and log the result
+// const decoded = Buffer.from("ZnJlZUNvZGVDYW1w", "base64").toString("utf8")
+// console.log(decoded)
+
+// ** The crypto module provides cryptographic functionality. One common use is hashing - transforming data into a fixed-length string that cannot be reversed. Use crypto.createHash to create a hash, .update to feed it data, and .digest to get the result:
+// const hash = crypto.createHash("sha256").update("freeCodeCamp!").digest("hex");
+// console.log(hash)
+
+//** crypto.randomBytes(n) generates n cryptographically strong random bytes and returns them as a Buffer. Calling .toString('hex') on the result gives a random hex string: */
+
+// const random = crypto.randomBytes(16).toString('hex')
+// console.log(random)
+
+const id = crypto.randomUUID();
+console.log(id)
