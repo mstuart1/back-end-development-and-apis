@@ -99,5 +99,25 @@ const filePath = path.join(__dirname, "assets", "poem.txt")
 // console.log(process.argv); // [ '/path/to/node', '/path/to/server.js', 'hello', 'world' ]
 // console.log(process.argv[2]); // 'hello'
 
-process.stdout.write("Hello from stdout\n");
-process.stderr.write("Hello from stderr\n");
+// process.stdout.write("Hello from stdout\n");
+// process.stderr.write("Hello from stderr\n");
+
+
+// const readable = fs.createReadStream("assets/poem.txt", { encoding: "utf8" });
+
+// readable.on("data", (chunk) => {
+//   console.log(chunk);
+// });
+
+// readable.on("end", () => {
+//   console.log("Done reading");
+// });
+
+// const writable = fs.createWriteStream("assets/stream-output.txt");
+// writable.write("First chunk\n");
+// writable.write("Second chunk\n");
+// writable.end();
+
+const readable = fs.createReadStream("assets/poem.txt");
+const writable = fs.createWriteStream("assets/stream-output.txt");
+readable.pipe(writable);
