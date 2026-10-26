@@ -1,0 +1,16 @@
+{
+  "name": "prime_number_checker",
+  "version": "1.0.0",
+  "description": "This package checks if a number is prime.",
+  "keywords": [
+    "prime",
+    "number"
+  ],
+  "license": "MIT",
+  "author": "Michelle Stuart",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.test.js"
+  }
+}
